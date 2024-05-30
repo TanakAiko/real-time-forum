@@ -1,2 +1,2 @@
 # real-time-forum
-A project given by 01 edu
+To see the project, click [here](https://github.com/01-edu/public/tree/master/subjects/real-time-forum)
