@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+
+  authapi:
+    build:
+      context: ./backend/services/authAPI
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    volumes:
+      - authapi-data:/app/databases
+
+  postapi:
+    build:
+      context: ./backend/services/postAPI
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    volumes:
+      - postapi-data:/app/databases
+
+  gateway:
+    build:
+      context: ./backend/gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    depends_on:
+      - authapi
+      - postapi
+
+
+  frontend:
+    build:
+      context: ./frontend/clientJS
+      dockerfile: Dockerfile
+    ports:
+      - "8089:8089"
+    networks:
+      - app-network
+    depends_on:
+      - gateway
+
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  authapi-data:
+  postapi-data:
