@@ -10,3 +10,6 @@
 [submodule "frontend/clientJS"]
 	path = frontend/clientJS
 	url = https://github.com/TanakAiko/clientJS
+[submodule "backend/services/commentAPI"]
+	path = backend/services/commentAPI
+	url = https://github.com/TanakAiko/commentAPI
