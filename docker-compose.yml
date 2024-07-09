@@ -20,6 +20,15 @@ services:
     volumes:
       - postapi-data:/app/databases
 
+  commentapi:
+    build:
+      context: ./backend/services/commentAPI
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    volumes:
+      - commentapi-data:/app/databases
+
   gateway:
     build:
       context: ./backend/gateway
@@ -31,6 +40,7 @@ services:
     depends_on:
       - authapi
       - postapi
+      - commentAPI
 
 
   frontend:
@@ -52,3 +62,4 @@ networks:
 volumes:
   authapi-data:
   postapi-data:
+  commentapi-data:
