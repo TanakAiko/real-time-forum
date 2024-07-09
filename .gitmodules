@@ -1,0 +1,12 @@
+[submodule "backend/gateway"]
+	path = backend/gateway
+	url = https://github.com/TanakAiko/gateway
+[submodule "backend/services/authAPI"]
+	path = backend/services/authAPI
+	url = https://github.com/TanakAiko/authAPI
+[submodule "backend/services/postAPI"]
+	path = backend/services/postAPI
+	url = https://github.com/TanakAiko/postAPI
+[submodule "frontend/clientJS"]
+	path = frontend/clientJS
+	url = https://github.com/TanakAiko/clientJS
