@@ -40,7 +40,7 @@ services:
     depends_on:
       - authapi
       - postapi
-      - commentAPI
+      - commentapi
 
 
   frontend:
