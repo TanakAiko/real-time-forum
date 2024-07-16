@@ -29,6 +29,15 @@ services:
     volumes:
       - commentapi-data:/app/databases
 
+  chatapi:
+    build:
+      context: ./backend/services/chatAPI
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    volumes:
+      - chatapi-data:/app/databases
+
   gateway:
     build:
       context: ./backend/gateway
@@ -42,7 +51,6 @@ services:
       - postapi
       - commentapi
 
-
   frontend:
     build:
       context: ./frontend/clientJS
@@ -54,7 +62,6 @@ services:
     depends_on:
       - gateway
 
-
 networks:
   app-network:
     driver: bridge
@@ -63,3 +70,4 @@ volumes:
   authapi-data:
   postapi-data:
   commentapi-data:
+  chatapi-data:
