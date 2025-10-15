@@ -1,4 +1,3 @@
-docker-compose stop frontend
-docker-compose rm -f frontend
-docker-compose build frontend
-docker-compose up -d frontend
+docker-compose down
+docker-compose build
+docker-compose up -d

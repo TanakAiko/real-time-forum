@@ -50,6 +50,7 @@ services:
       - authapi
       - postapi
       - commentapi
+      - chatapi
 
   frontend:
     build:
